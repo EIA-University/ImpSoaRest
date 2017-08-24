@@ -1,0 +1,40 @@
+{{#section 'head'}}
+
+{{/section}}
+<section class="fullContent">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            {{#if isRojo}}
+                <div class="info-box-2 bg-red hover-zoom-effect">
+            {{else}}
+                <div class="info-box-2 bg-black hover-zoom-effect">
+            {{/if}}
+                <div class="icon">
+                    <i class="material-icons">adjust</i>
+                </div>
+                <div class="content">
+                    <div class="text">NUMERO RULETA</div>
+                    <div class="number count-to" data-from="0" data-to="{{num}}" data-speed="1000" data-fresh-interval="1">125</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            {{#if res}}
+                 <h1>Correcto</h1>
+            {{else}}
+                <h1>Incorrecto</h1>
+            {{/if}}
+            <a href="/">Volver a intentarlo!, tu puedes :), creo en ti, gasta mas dinero</a>
+        </div>
+
+    </div>
+</section>
+{{#section 'scripts'}}
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="./plugins/jquery-countto/jquery.countTo.js"></script>
+    <!-- Custom Js -->
+    <script src="./js/displayResultado.js"></script>
+{{/section}}
