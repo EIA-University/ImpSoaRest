@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title><%= title %></title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="Materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="SweetAlert/sweetalert.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<nav class="black" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">Implementacion</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#">Navbar Link</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+            <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <br><br>
+            <h1 class="header center white-text">Ruleta Casino</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">Simulador de juegos de azar y mujerzuelas</h5>
+            </div>
+            <br><br>
+        </div>
+    </div>
+    <div class="parallax"><img src="/images/rouletteBackground1.jpg" alt="Unsplashed background img 1"></div>
+</div>
+
+<div class="container">
+    <div class="section">
+
+        <div class="row">
+            <div class="col s12 center">
+                <h4>Ingresa tu saldo</h4>
+
+                <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu,
+                    non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id,
+                    viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin
+                    diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices
+                    erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                <div class="row">
+                    <form class="col s12" id="fSado" method="post" action="/getSaldo">
+                        <div class="row">
+                            <div class="input-field col s9">
+                                <i class="material-icons prefix">attach_money</i>
+                                <input id="saldo" type="number" name="saldo" validate>
+                                <label for="saldo">Saldo</label>
+                            </div>
+                            <div class="col s3">
+                                <button class="waves-effect waves-light btn" >Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="parallax-container valign-wrapper">
+    <div class="parallax"><img src="/images/casinoBackground3.jpg" alt="Unsplashed background img 2"></div>
+</div>
+
+<div class="container" id="selectorJuego">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center">
+                <h4>Opciones de apuesta<i class="material-icons">grain</i></h4>
+                <p class="center-align">Selecciona una opcion y llena los datos</p>
+            </div>
+        </div>
+
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">filter_1</i>Apostar a un número</div>
+                <div class="collapsible-body">
+                    <form id="fNum" method="post" action="/apostarNum">
+                        <div class="row center-align">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">hdr_strong</i>
+                                <input id="num" type="number" name="num">
+                                <label for="num">Numero</label>
+                            </div>
+                            <div class="col s3">
+                                <button class="waves-effect waves-light btn" >Apostar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">filter_2</i>Apostar a un Color</div>
+                <div class="collapsible-body">
+                    <div class="row center-align">
+                        <div class="col xl6 l6 m6 s12">
+                            <a class="waves-effect waves-light btn-large red" href="/apostarRojos">Apostar Rojos</a>
+                        </div>
+                        <div class="col xl6 l6 m6 s12">
+                            <a class="waves-effect waves-light black btn-large" href="/apostarNegros">Apostar Negros</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">filter_3</i>Apostar a Pares o Impares</div>
+                <div class="collapsible-body">
+                    <div class="row center-align">
+                        <div class="col xl6 l6 m6 s12">
+                            <a class="waves-effect waves-light btn-large pink" href="/apostarPares">Apostar Pares</a>
+                        </div>
+                        <div class="col xl6 l6 m6 s12">
+                            <a class="waves-effect waves-light cyan btn-large" href="/apostarImpares">Apostar Impares</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<footer class="page-footer teal">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Company Bio</h5>
+                <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Settings</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Connect</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        </div>
+    </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="JQuery/jquery.js"></script>
+<script src="Materialize/js/materialize.js"></script>
+<script src="SweetAlert/sweetalert.min.js"></script>
+<script src="/javascripts/init.js"></script>
+
+</body>
+</html>
